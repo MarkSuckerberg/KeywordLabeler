@@ -9,14 +9,14 @@ module.exports = robot => {
       "pull_request.edited"
     ],
     async context => {
-      const config = await context.config("keylabeler.yml", {
+      const config = await context.config("context-labeler.yml", {
         matchTitle: true,
         matchBody: true,
         caseSensitive: true
       });
 
       if (!config) {
-        console.log('Config file named "keylabeler.yml" not found. Exiting.');
+        console.log('Config file named "context-labeler.yml" not found. Exiting.');
         return;
       }
 
